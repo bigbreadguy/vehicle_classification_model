@@ -1,4 +1,4 @@
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
 import json
@@ -18,7 +18,7 @@ if __name__=='__main__':
     predictions = {}
     for image_name in image_list:
         # Replace this with the path to your image
-        image = Image.open(os.path.join('images', image_name))
+        image = Image.open(os.path.join('images', image_name)).convert('RGB')
         #resize the image to a 224x224 with the same strategy as in TM2:
         #resizing the image to be at least 224x224 and then cropping from the center
         size = (224, 224)
