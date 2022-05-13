@@ -1,0 +1,4 @@
+0 tractor
+1 cargo_truck
+2 crane
+3 excavator
