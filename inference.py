@@ -7,13 +7,13 @@ import tqdm
 import argparse
 
 if __name__=='__main__':
-    suffixes = [path.split('.')[0].split('model')[-1] for path in os.listdir(os.path.join('pretrained')) if path.endswith('.h5')]
+    model_suffixes = [path.split('.')[0].split('model')[-1] for path in os.listdir(os.path.join('pretrained')) if path.endswith('.h5')]
     parser = argparse.ArgumentParser(description='Inference', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('-S', '--suffix', default='', choices=suffixes, type=str, dest='suffix')
+    parser.add_argument('-M', '--model_suffix', default='', choices=model_suffixes, type=str, dest='model_suffix')
     args = parser.parse_args()
     
     # Load the model
-    model = load_model(os.path.join('pretrained', f'keras_model{args.suffix}.h5'))
+    model = load_model(os.path.join('pretrained', f'keras_model{args.model_suffix}.h5'))
 
     # Create the array of the right shape to feed into the keras model
     # The 'length' or number of images you can put into the array is
@@ -22,7 +22,7 @@ if __name__=='__main__':
     
     image_list = [img for img in os.listdir('images') if img.endswith('.png') or img.endswith('.jpg') or img.endswith('.jpeg')]
 
-    print(f'\nInference loop starts with suffix: {args.suffix}\n')
+    print(f'\nInference loop starts with suffix: {args.model_suffix}\n')
 
     predictions = {}
     for image_name in tqdm.tqdm(image_list):
@@ -48,5 +48,5 @@ if __name__=='__main__':
     if not os.path.exists('result'):
         os.makedirs('result')
     
-    with open(os.path.join('result', f'predictions{args.suffix}.json'), 'w') as f:
+    with open(os.path.join('result', f'predictions{args.model_suffix}.json'), 'w') as f:
         json.dump(predictions, f)
