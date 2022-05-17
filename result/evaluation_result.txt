@@ -1,0 +1,18 @@
+Prediction results with suffix: _control_extended_encoder_epoch20
+{'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 2, 'van': 0, 'excavator': 3238}
+Accuracy: 99.93827160493827%
+
+
+Prediction results with suffix: _control_skip_connection_epoch20
+{'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 12, 'van': 0, 'excavator': 3228}
+Accuracy: 99.62962962962963%
+
+
+Prediction results with suffix: _control_unity_epoch20
+{'bus': 0, 'cargo_truck': 71, 'crane': 90, 'tractor': 1326, 'van': 0, 'excavator': 1753}
+Accuracy: 54.104938271604944%
+
+
+Prediction results with suffix: _target_epoch20
+{'bus': 0, 'cargo_truck': 0, 'crane': 23, 'tractor': 13, 'van': 0, 'excavator': 3204}
+Accuracy: 98.88888888888889%
