@@ -3,10 +3,17 @@ from PIL import Image, ImageOps
 import numpy as np
 import json
 import os
+import tqdm
+import argparse
 
 if __name__=='__main__':
+    suffixes = [path.split('.')[0].split('model')[-1] for path in os.listdir(os.path.join('pretrained')) if path.endswith('.h5')]
+    parser = argparse.ArgumentParser(description='Inference', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('-S', '--suffix', default='', choices=suffixes, type=str, dest='suffix')
+    args = parser.parse_args()
+    
     # Load the model
-    model = load_model(os.path.join('pretrained', 'keras_model.h5'))
+    model = load_model(os.path.join('pretrained', f'keras_model{args.suffix}.h5'))
 
     # Create the array of the right shape to feed into the keras model
     # The 'length' or number of images you can put into the array is
@@ -15,8 +22,10 @@ if __name__=='__main__':
     
     image_list = [img for img in os.listdir('images') if img.endswith('.png') or img.endswith('.jpg') or img.endswith('.jpeg')]
 
+    print(f'\nInference loop starts with suffix: {args.suffix}\n')
+
     predictions = {}
-    for image_name in image_list:
+    for image_name in tqdm.tqdm(image_list):
         # Replace this with the path to your image
         image = Image.open(os.path.join('images', image_name)).convert('RGB')
         #resize the image to a 224x224 with the same strategy as in TM2:
@@ -39,5 +48,5 @@ if __name__=='__main__':
     if not os.path.exists('result'):
         os.makedirs('result')
     
-    with open(os.path.join('result', 'predictions.json'), 'w') as f:
+    with open(os.path.join('result', f'predictions{args.suffix}.json'), 'w') as f:
         json.dump(predictions, f)
