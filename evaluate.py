@@ -33,8 +33,10 @@ def evaluate(suffix:str):
     
     print(f'Prediction results with suffix: {suffix}')
     print(prediction_results)
-    accuracy_string = f'Accuracy: {prediction_results["excavator"]/sum([v for v in prediction_results.values()])*100}%'
-    print(accuracy_string)
+    accuracy = prediction_results["excavator"]/sum([v for v in prediction_results.values()])
+    f1_score = 2 * accuracy * 1 / (accuracy + 1)
+    evaluation_string = f'Accuracy: {accuracy*100}%\nF1 Score: {f1_score}'
+    print(evaluation_string)
 
 if __name__=='__main__':
     model_suffixes = [path.split('.')[0].split('model')[-1] for path in os.listdir(os.path.join('pretrained')) if path.endswith('.h5')]
