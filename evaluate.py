@@ -21,7 +21,7 @@ def evaluate(suffix:str):
         'excavator': 0,
     }
 
-    result_path = os.path.join('..', 'result', f'predictions{suffix}.json')
+    result_path = os.path.join('result', f'predictions{suffix}.json')
 
     with open(result_path, 'r') as f:
         results = json.load(f)
