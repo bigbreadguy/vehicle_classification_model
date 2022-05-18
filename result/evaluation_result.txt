@@ -1,58 +1,70 @@
 Prediction results with suffix: _control_extended_encoder_epoch10
 {'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 1, 'van': 0, 'excavator': 3239}
 Accuracy: 99.96913580246914%
+F1 Score: 0.9998456551937027
 
 
 Prediction results with suffix: _control_extended_encoder_epoch20
 {'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 2, 'van': 0, 'excavator': 3238}
 Accuracy: 99.93827160493827%
+F1 Score: 0.9996912627354121
 
 
 Prediction results with suffix: _control_extended_encoder_epoch30
 {'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 0, 'van': 0, 'excavator': 3240}
 Accuracy: 100.0%
+F1 Score: 1.0
 
 
 Prediction results with suffix: _control_skip_connection_epoch10
 {'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 1, 'van': 0, 'excavator': 3239}
 Accuracy: 99.96913580246914%
+F1 Score: 0.9998456551937027
 
 
 Prediction results with suffix: _control_skip_connection_epoch20
 {'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 12, 'van': 0, 'excavator': 3228}
 Accuracy: 99.62962962962963%
+F1 Score: 0.9981447124304267
 
 
 Prediction results with suffix: _control_skip_connection_epoch30
 {'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 0, 'van': 0, 'excavator': 3240}
 Accuracy: 100.0%
+F1 Score: 1.0
 
 
 Prediction results with suffix: _control_unity_epoch10
 {'bus': 0, 'cargo_truck': 0, 'crane': 2242, 'tractor': 790, 'van': 0, 'excavator': 208}
 Accuracy: 6.419753086419753%
+F1 Score: 0.12064965197215778
 
 
 Prediction results with suffix: _control_unity_epoch20
 {'bus': 0, 'cargo_truck': 71, 'crane': 90, 'tractor': 1326, 'van': 0, 'excavator': 1753}
 Accuracy: 54.104938271604944%
+F1 Score: 0.7021830562787903
 
 
 Prediction results with suffix: _control_unity_epoch30
 {'bus': 0, 'cargo_truck': 184, 'crane': 1641, 'tractor': 692, 'van': 0, 'excavator': 723}
 Accuracy: 22.314814814814817%
+F1 Score: 0.3648750946252839
 
 
 Prediction results with suffix: _target_epoch10
 {'bus': 0, 'cargo_truck': 0, 'crane': 0, 'tractor': 1, 'van': 0, 'excavator': 3239}
 Accuracy: 99.96913580246914%
+F1 Score: 0.9998456551937027
 
 
 Prediction results with suffix: _target_epoch20
 {'bus': 0, 'cargo_truck': 0, 'crane': 23, 'tractor': 13, 'van': 0, 'excavator': 3204}
 Accuracy: 98.88888888888889%
+F1 Score: 0.9944134078212291
 
 
 Prediction results with suffix: _target_epoch30
 {'bus': 0, 'cargo_truck': 0, 'crane': 11, 'tractor': 15, 'van': 0, 'excavator': 3214}
 Accuracy: 99.19753086419753%
+F1 Score: 0.9959714905484971
